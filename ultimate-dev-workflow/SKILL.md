@@ -24,9 +24,9 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 
 - Phase 0 开发前：立项清单 / 选技术栈 / 项目架构 / Agent 宪法（骨架已建）
 - Phase 1 开发中：实施文档拆解 / 分阶段推进验收（已建骨架）
-- Phase 2 验证：占位（测试、类型、lint、真实输入）
-- Phase 3 交付：占位（文档、部署、审查）
-- Phase 4 复盘：占位（经验沉淀、skill 回写）
+- Phase 2 验证：全量验证与整体验收（已建骨架）
+- Phase 3 交付：文档、部署、交接（已建骨架）
+- Phase 4 复盘：偏差记录、经验回写（已建骨架）
 
 ## Resources
 
@@ -59,3 +59,6 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `05-phase1-development.md`：Phase 1 开发入口 — 别让 AI 凭感觉写，两步流程与分工
 - `05a-implementation-docs.md`：实施文档拆解 — 实施真元文档（SSOT）、目标/边界/验收、只拆当前大阶段
 - `05b-staged-delivery.md`：分阶段推进验收 — 防漂移、开工框定指令、验收三问
+- `06-phase2-verification.md`：Phase 2 验证 — 全量验证、真实场景、边界失败、审查
+- `07-phase3-delivery.md`：Phase 3 交付 — 文档、部署、回滚、交接、归档
+- `08-phase4-retrospective.md`：Phase 4 复盘 — 成果核对、偏差记录、经验回写
