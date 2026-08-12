@@ -28,4 +28,4 @@
 - 临时变更已回写文档
 - 用户确认
 
-通过后进入 Phase 2 验证（待补）。
+通过后进入 Phase 2 验证（[06-phase2-verification.md](06-phase2-verification.md)）。

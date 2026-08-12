@@ -1,6 +1,6 @@
 # 领域案例：AI 文学编辑部（Domain Case）
 
-来源：novel-editorial-playbook（完整阶段手册、脚本与坑库归档于 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\novel-editorial-playbook`）。
+来源：novel-editorial-playbook（完整阶段手册与坑库已内置 `assets/domain-ai-editorial-references`，脚手架在 `assets/domain-ai-editorial-scripts`；归档备份在 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\novel-editorial-playbook`）。
 
 ## 场景
 
@@ -30,4 +30,4 @@
 
 先离线生成一章落库再过发布；构造失败场景（字数不足/无序号）验证报错码映射与补发；幂等不重复发布；断电/重启后能恢复不双发；全量测试 + 端到端实跑（开会→日更→发布→落库→日记→知识同步→释放锁）。
 
-开发同类多 Agent 平台时，按需读取归档目录的 `references/agent-meetings.md`、`references/frontend-desktop.md`、`references/pitfalls.md` 与 `scripts/scaffold_pipeline.py`。
+开发同类多 Agent 平台时，先读本浓缩版确认方向；需要完整阶段手册、坑库或脚手架时，再读 `assets/domain-ai-editorial-references/`（agent-meetings、frontend-desktop、pitfalls、verification）与 `assets/domain-ai-editorial-scripts/scaffold_pipeline.py`。

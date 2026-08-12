@@ -1,4 +1,4 @@
 interface:
-  display_name: "�ռ�ȫ���̿���"
-  short_description: "����������������������̣�ǰ���Ĳ��������嵥/����ջ/�ܹ�/Agent �ܷ���������׶ιǼܡ�"
-  default_prompt: "���ռ�ȫ���̿��� skill ���ҹ滮�򿪷�һ����Ŀ"
+  display_name: "终极全流程开发"
+  short_description: "从立项到交付的完整开发流程：需求定义、AI 适配选型、最小架构、Agent 宪法、实施真元文档与分阶段验收；工程总监推进，CLI 执行写码与审查修复；内置前端设计、Dashboard、PPT/文档、Excel、多 Agent 平台专项。"
+  default_prompt: "用终极全流程开发 skill 帮我规划或开发一个项目"

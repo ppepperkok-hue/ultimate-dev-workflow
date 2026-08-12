@@ -1,11 +1,11 @@
 # 表格数据处理（Spreadsheet Tools）
 
-来源：spreadsheet-processor（完整版与 recalc.py 归档于 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\spreadsheet-processor`）。
+来源：spreadsheet-processor（recalc.py 已内置 `assets/spreadsheet/recalc.py`；归档备份在 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\spreadsheet-processor`）。
 
 ## 核心纪律
 
 - **用 Excel 公式，不用 Python 算完硬编码**：总和、增长率、均值全部写成公式（`=SUM(B2:B9)`、`=(C4-C2)/C2`），文件随源数据变化自动重算。
-- **公式重算必跑 recalc.py**：`python <归档路径>/recalc.py output.xlsx`（LibreOffice 重算 + 全表扫描错误）；返回 `errors_found` 时按 `error_summary` 修复后重跑。
+- **公式重算必跑 recalc.py**：`python <skill-root>/assets/spreadsheet/recalc.py output.xlsx`（LibreOffice 重算 + 全表扫描错误）；返回 `errors_found` 时按 `error_summary` 修复后重跑。
 - **零公式错误交付**：`#REF!`、`#DIV/0!`、`#VALUE!`、`#NAME?` 一个都不许留。
 
 ## 工具分工

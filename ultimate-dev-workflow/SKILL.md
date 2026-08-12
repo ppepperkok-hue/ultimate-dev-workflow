@@ -1,13 +1,29 @@
 ---
 name: ultimate-dev-workflow
-description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期，立项规划以需求定义为核心，坚持拒绝盲从与角色转变；选技术栈以项目与 AI 适配为核心，不盲目追求最强；工程总监与用户宏观推进，CLI 程序员负责实际写码与审查修复。覆盖专项：前端设计与审查、Dashboard、HTML PPT/PPTX 转换、Office 文档、Excel 数据处理、多 Agent 平台开发。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
+description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期。立项规划以需求定义为核心（拒绝盲从、角色转变），选技术栈以项目与 AI 适配为核心，工程总监与用户宏观推进、CLI 程序员负责写码与审查修复；内置前端设计、Dashboard、PPT/文档、Excel、多 Agent 平台专项。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
 ---
 
 # Ultimate Dev Workflow
 
 ## 工作流总览
 
-按阶段推进，前一阶段未通过验收门不得进入下一阶段。当前骨架覆盖 Phase 0（开发前四步）；Phase 1+ 为占位阶段，后续逐步补齐。
+按阶段推进，前一阶段未通过验收门不得进入下一阶段。全流程闭环：Phase 0 开发前四步 → Phase 1 开发 → Phase 2 验证 → Phase 3 交付 → Phase 4 复盘。
+
+## 快速路由
+
+- 新项目 / 从零开发 → 从 Phase 0 第 1 步开始：[01-project-checklist.md](references/01-project-checklist.md)
+- 需求不清 / 立项 / 需求定义 → [01-project-checklist.md](references/01-project-checklist.md)
+- 已立项，选技术栈 → [02-tech-stack.md](references/02-tech-stack.md)
+- 已有需求，设计架构 → [03-architecture.md](references/03-architecture.md)
+- 要定项目规则 / AGENTS.md → [04-agent-constitution.md](references/04-agent-constitution.md)
+- 准备写功能 → [05a-implementation-docs.md](references/05a-implementation-docs.md) → [05b-staged-delivery.md](references/05b-staged-delivery.md)
+- 审查 / 找漏洞 / 修复 → [06-phase2-verification.md](references/06-phase2-verification.md) + [09-role-division.md](references/09-role-division.md) + [10-engineering-essentials.md](references/10-engineering-essentials.md)
+- 前端设计 / 改版 / UI 审查 → [11-frontend-design.md](references/11-frontend-design.md)
+- Dashboard / 监控面板 → [12-dashboard.md](references/12-dashboard.md)
+- PPT / 文档 / 图片转可编辑 PPT → [13-document-tools.md](references/13-document-tools.md)
+- Excel / 表格数据 → [14-data-tools.md](references/14-data-tools.md)
+- 多 Agent 平台 / AI 编辑部 → [15-domain-ai-editorial.md](references/15-domain-ai-editorial.md)
+- 交付收尾 → [07-phase3-delivery.md](references/07-phase3-delivery.md)；项目结束复盘 → [08-phase4-retrospective.md](references/08-phase4-retrospective.md)
 
 ## Phase 0：开发前四步（顺序执行）
 
@@ -63,9 +79,9 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `07-phase3-delivery.md`：Phase 3 交付 — 文档、部署、回滚、交接、归档
 - `08-phase4-retrospective.md`：Phase 4 复盘 — 成果核对、偏差记录、经验回写
 - `09-role-division.md`：角色分工 — 工程总监宏观推进、CLI 程序员实际执行、审查修复闭环
-- `10-engineering-essentials.md`：工程红线与反模式 — 质量门、F1–F12 反模式族、老板汇报制
-- `11-frontend-design.md`：前端设计与审查 — 模式、三拨盘、反 AI 默认、一致性锁、pre-flight
+- `10-engineering-essentials.md`：工程红线与反模式 — 质量门、F1–F12 反模式族、老板汇报制（完整 references 见 assets/engineering-references）
+- `11-frontend-design.md`：前端设计与审查 — 模式、三拨盘、反 AI 默认、一致性锁、pre-flight（scripts/references 见 assets/impeccable-*）
 - `12-dashboard.md`：Dashboard 构建 — brief、数据源纪律、指标家族、布局、QA
-- `13-document-tools.md`：文档与演示生成 — Office 文档、HTML PPT、图片转可编辑 PPT
-- `14-data-tools.md`：表格数据处理 — 公式优先、recalc 验证、格式规范
-- `15-domain-ai-editorial.md`：领域案例 — AI 文学编辑部、多 Agent 平台开发
+- `13-document-tools.md`：文档与演示生成 — Office 文档、HTML PPT、图片转可编辑 PPT（资产见 assets/html-ppt-*、assets/editppt）
+- `14-data-tools.md`：表格数据处理 — 公式优先、recalc 验证、格式规范（recalc.py 见 assets/spreadsheet）
+- `15-domain-ai-editorial.md`：领域案例 — AI 文学编辑部、多 Agent 平台开发（完整手册见 assets/domain-ai-editorial-*）

@@ -1,6 +1,8 @@
 # 前端设计与审查（Frontend Design）
 
-来源：impeccable、design-taste-frontend、minimalist-ui（完整版归档于 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\`）。
+来源：impeccable、design-taste-frontend、minimalist-ui（完整 scripts/references 已内置 `assets/impeccable-scripts` 与 `assets/impeccable-references`；归档备份在 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\`）。
+
+需要 impeccable 的会话上下文时，运行 `node <skill-root>/assets/impeccable-scripts/context.mjs --target <path>`（skill-root 为 ultimate-dev-workflow 目录）。
 
 ## 先读房间（Brief Inference）
 

@@ -1,6 +1,6 @@
 # 工程红线与反模式（Engineering Essentials）
 
-来源：engineering-playbook（已并入本 skill，完整版归档于 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\engineering-playbook`）。
+来源：engineering-playbook（已并入本 skill；完整 references 已内置 `assets/engineering-references`，归档备份在 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12\engineering-playbook`）。
 
 ## 工程红线（不可妥协）
 
@@ -40,6 +40,8 @@
 | F12 | 测试假断言 | `rg -n "assertTrue\(True\)"` |
 
 治理顺序：先按族全库清理（先治族，再治点），族级任务包派独立 CLI；无法治理的实例必须显式豁免并写理由。
+
+扫描命令以 Python 为例；其他语言按同族反模式映射等价模式（如 JS 的空 catch 块、Go 的 `_ = err`、Java 的裸 `catch (Exception e) {}`）。
 
 ## 老板汇报制（工程总监向用户汇报）
 

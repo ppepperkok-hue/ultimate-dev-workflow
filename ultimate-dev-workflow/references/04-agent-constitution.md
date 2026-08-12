@@ -47,4 +47,4 @@
 - 强制读取验证可检查
 - 用户确认
 
-宪法确认后，进入 Phase 1 开发（待补）。
+宪法确认后，进入 Phase 1 开发（[05-phase1-development.md](05-phase1-development.md)）。
