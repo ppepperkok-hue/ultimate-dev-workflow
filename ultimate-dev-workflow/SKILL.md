@@ -11,7 +11,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 
 ## Phase 0：开发前四步（顺序执行）
 
-1. 立项清单 — [01-project-checklist.md](references/01-project-checklist.md)
+1. 立项规划（内部四步）— [01-project-checklist.md](references/01-project-checklist.md)
 2. 选技术栈 — [02-tech-stack.md](references/02-tech-stack.md)
 3. 项目架构 — [03-architecture.md](references/03-architecture.md)
 4. Agent 宪法 — [04-agent-constitution.md](references/04-agent-constitution.md)
@@ -32,7 +32,11 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 
 ### references/
 
-- `01-project-checklist.md`：立项清单 — 目标、边界、风险、Go/No-Go
+- `01-project-checklist.md`：立项规划入口 — 四步流程、全局约束、验收门
+- `01a-core-value.md`：确立核心价值 — 用户、场景、一句话价值主张
+- `01b-project-goals.md`：明确核心目标 — 可测量成功标准、优先级
+- `01c-feature-breakdown.md`：功能细化拆解 — 用户故事、做/不做边界
+- `01d-executable-units.md`：拆解为可执行单元 — 任务、验收标准、里程碑
 - `02-tech-stack.md`：选技术栈 — 候选、评估维度、取舍记录、版本锁定
 - `03-architecture.md`：项目架构 — 模块边界、数据流、目录骨架、接口契约
 - `04-agent-constitution.md`：Agent 宪法 — 验证纪律、权限边界、审查义务、沟通规则
