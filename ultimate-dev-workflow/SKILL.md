@@ -13,7 +13,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 
 1. 立项规划（内部四步）— [01-project-checklist.md](references/01-project-checklist.md)
 2. 选技术栈（内部八层）— [02-tech-stack.md](references/02-tech-stack.md)
-3. 项目架构 — [03-architecture.md](references/03-architecture.md)
+3. 项目架构（内部四步）— [03-architecture.md](references/03-architecture.md)
 4. Agent 宪法 — [04-agent-constitution.md](references/04-agent-constitution.md)
 
 每一步先读对应 reference，按「输入 → 决策 → 产出 → 验收门」执行，产出写回项目文档（项目根或 `docs/`），经用户确认后再进入下一步。
@@ -46,5 +46,9 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `02f-api-contract.md`：API 与通信契约 — 风格、契约、客户端生成
 - `02g-tooling.md`：测试与质量工具链 — 测试、lint、类型检查、CI/CD
 - `02h-deploy-observability.md`：部署、可观测性与安全 — 托管、监控、密钥、回滚
-- `03-architecture.md`：项目架构 — 模块边界、数据流、目录骨架、接口契约
+- `03-architecture.md`：项目架构入口 — 最小架构 + 统一规则，四步流程
+- `03a-minimum-scope.md`：最小架构范围 — 只支撑首个里程碑，不做全量
+- `03b-common-rules.md`：通用规则 — 目录、命名、错误、配置、接口、测试、提交
+- `03c-minimal-skeleton.md`：最小骨架 — 可运行链路、验证命令
+- `03d-feature-extension.md`：功能接入规则 — 模块模板、增量开发检查单
 - `04-agent-constitution.md`：Agent 宪法 — 验证纪律、权限边界、审查义务、沟通规则
