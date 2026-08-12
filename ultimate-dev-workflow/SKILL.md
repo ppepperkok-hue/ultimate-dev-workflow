@@ -56,6 +56,6 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `04b-context-injection.md`：自动续入上下文 — 自动加载机制、常驻与按需划分
 - `04c-full-load-before-task.md`：任务前全量加载 — 加载清单、禁止只读片段
 - `04d-enforce-read.md`：强制读取验证 — 校验脚本、违规处理
-- `05-phase1-development.md`：Phase 1 开发入口 — 两步流程、与 Phase 0 衔接
-- `05a-implementation-docs.md`：实施文档拆解 — 目标/边界/验收三大核心、评审、可追溯
-- `05b-staged-delivery.md`：分阶段推进验收 — 里程碑批次、阶段验收门
+- `05-phase1-development.md`：Phase 1 开发入口 — 别让 AI 凭感觉写，两步流程与分工
+- `05a-implementation-docs.md`：实施文档拆解 — 实施真元文档（SSOT）、目标/边界/验收、只拆当前大阶段
+- `05b-staged-delivery.md`：分阶段推进验收 — 防漂移、开工框定指令、验收三问
