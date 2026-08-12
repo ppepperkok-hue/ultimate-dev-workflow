@@ -12,7 +12,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 ## Phase 0：开发前四步（顺序执行）
 
 1. 立项规划（内部四步）— [01-project-checklist.md](references/01-project-checklist.md)
-2. 选技术栈 — [02-tech-stack.md](references/02-tech-stack.md)
+2. 选技术栈（内部八层）— [02-tech-stack.md](references/02-tech-stack.md)
 3. 项目架构 — [03-architecture.md](references/03-architecture.md)
 4. Agent 宪法 — [04-agent-constitution.md](references/04-agent-constitution.md)
 
@@ -37,6 +37,14 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `01b-project-goals.md`：明确核心目标 — 可测量成功标准、优先级
 - `01c-feature-breakdown.md`：功能细化拆解 — 用户故事、做/不做边界
 - `01d-executable-units.md`：拆解为可执行单元 — 任务、验收标准、里程碑
-- `02-tech-stack.md`：选技术栈 — 候选、评估维度、取舍记录、版本锁定
+- `02-tech-stack.md`：选技术栈入口 — 八层流程、通用评估维度、版本锁定
+- `02a-frontend.md`：前端技术栈 — 框架、语言、状态管理、样式、构建
+- `02b-ui-library.md`：UI 组件库 — 组件库、设计系统、主题、图标
+- `02c-backend-language.md`：后端语言 — 语言与运行时
+- `02d-framework.md`：开发框架 — 后端/全栈框架、脚手架
+- `02e-data-storage.md`：数据与存储 — 主库、缓存、对象存储、ORM
+- `02f-api-contract.md`：API 与通信契约 — 风格、契约、客户端生成
+- `02g-tooling.md`：测试与质量工具链 — 测试、lint、类型检查、CI/CD
+- `02h-deploy-observability.md`：部署、可观测性与安全 — 托管、监控、密钥、回滚
 - `03-architecture.md`：项目架构 — 模块边界、数据流、目录骨架、接口契约
 - `04-agent-constitution.md`：Agent 宪法 — 验证纪律、权限边界、审查义务、沟通规则
