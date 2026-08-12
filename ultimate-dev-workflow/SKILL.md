@@ -1,6 +1,6 @@
 ---
 name: ultimate-dev-workflow
-description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期，立项规划以需求定义为核心，坚持拒绝盲从与角色转变；选技术栈以项目与 AI 适配为核心，不盲目追求最强；工程总监与用户宏观推进，CLI 程序员负责实际写码与审查修复。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
+description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期，立项规划以需求定义为核心，坚持拒绝盲从与角色转变；选技术栈以项目与 AI 适配为核心，不盲目追求最强；工程总监与用户宏观推进，CLI 程序员负责实际写码与审查修复。覆盖专项：前端设计与审查、Dashboard、HTML PPT/PPTX 转换、Office 文档、Excel 数据处理、多 Agent 平台开发。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
 ---
 
 # Ultimate Dev Workflow
@@ -63,3 +63,9 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `07-phase3-delivery.md`：Phase 3 交付 — 文档、部署、回滚、交接、归档
 - `08-phase4-retrospective.md`：Phase 4 复盘 — 成果核对、偏差记录、经验回写
 - `09-role-division.md`：角色分工 — 工程总监宏观推进、CLI 程序员实际执行、审查修复闭环
+- `10-engineering-essentials.md`：工程红线与反模式 — 质量门、F1–F12 反模式族、老板汇报制
+- `11-frontend-design.md`：前端设计与审查 — 模式、三拨盘、反 AI 默认、一致性锁、pre-flight
+- `12-dashboard.md`：Dashboard 构建 — brief、数据源纪律、指标家族、布局、QA
+- `13-document-tools.md`：文档与演示生成 — Office 文档、HTML PPT、图片转可编辑 PPT
+- `14-data-tools.md`：表格数据处理 — 公式优先、recalc 验证、格式规范
+- `15-domain-ai-editorial.md`：领域案例 — AI 文学编辑部、多 Agent 平台开发
