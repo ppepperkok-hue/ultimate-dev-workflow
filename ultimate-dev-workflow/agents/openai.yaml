@@ -1,0 +1,4 @@
+interface:
+  display_name: "终极全流程开发"
+  short_description: "从立项到交付的完整开发流程：前置四步（立项清单/技术栈/架构/Agent 宪法）与后续阶段骨架。"
+  default_prompt: "用终极全流程开发 skill 帮我规划或开发一个项目"
