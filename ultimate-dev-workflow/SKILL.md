@@ -1,6 +1,6 @@
 ---
 name: ultimate-dev-workflow
-description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期，立项规划以需求定义为核心，坚持拒绝盲从与角色转变；选技术栈以项目与 AI 适配为核心，不盲目追求最强。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
+description: 终极全流程开发工作流：覆盖从立项到交付的完整开发生命周期，立项规划以需求定义为核心，坚持拒绝盲从与角色转变；选技术栈以项目与 AI 适配为核心，不盲目追求最强；工程总监与用户宏观推进，CLI 程序员负责实际写码与审查修复。Use when starting a new software project, planning development from scratch, choosing a tech stack, designing project architecture, drafting agent working rules/constitution, or running any full-cycle development task. 触发场景：立项、需求定义、需求分析、立项清单、选技术栈、项目架构、Agent 宪法、全流程开发、从零搭建项目、重构或动工前的规划。
 ---
 
 # Ultimate Dev Workflow
@@ -62,3 +62,4 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `06-phase2-verification.md`：Phase 2 验证 — 全量验证、真实场景、边界失败、审查
 - `07-phase3-delivery.md`：Phase 3 交付 — 文档、部署、回滚、交接、归档
 - `08-phase4-retrospective.md`：Phase 4 复盘 — 成果核对、偏差记录、经验回写
+- `09-role-division.md`：角色分工 — 工程总监宏观推进、CLI 程序员实际执行、审查修复闭环
