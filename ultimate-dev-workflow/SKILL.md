@@ -14,7 +14,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 1. 立项规划（内部四步）— [01-project-checklist.md](references/01-project-checklist.md)
 2. 选技术栈（内部八层）— [02-tech-stack.md](references/02-tech-stack.md)
 3. 项目架构（内部四步）— [03-architecture.md](references/03-architecture.md)
-4. Agent 宪法 — [04-agent-constitution.md](references/04-agent-constitution.md)
+4. Agent 宪法（内部四步）— [04-agent-constitution.md](references/04-agent-constitution.md)
 
 每一步先读对应 reference，按「输入 → 决策 → 产出 → 验收门」执行，产出写回项目文档（项目根或 `docs/`），经用户确认后再进入下一步。
 
@@ -51,4 +51,8 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `03b-common-rules.md`：通用规则 — 目录、命名、错误、配置、接口、测试、提交
 - `03c-minimal-skeleton.md`：最小骨架 — 可运行链路、验证命令
 - `03d-feature-extension.md`：功能接入规则 — 模块模板、增量开发检查单
-- `04-agent-constitution.md`：Agent 宪法 — 验证纪律、权限边界、审查义务、沟通规则
+- `04-agent-constitution.md`：Agent 宪法入口 — 规则必须被读取到，四步流程
+- `04a-rule-locations.md`：指定规则位置 — AGENTS.md 分层、无散落副本
+- `04b-context-injection.md`：自动续入上下文 — 自动加载机制、常驻与按需划分
+- `04c-full-load-before-task.md`：任务前全量加载 — 加载清单、禁止只读片段
+- `04d-enforce-read.md`：强制读取验证 — 校验脚本、违规处理
