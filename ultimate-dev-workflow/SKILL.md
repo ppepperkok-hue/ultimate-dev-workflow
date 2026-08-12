@@ -23,7 +23,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 ## 阶段路线图
 
 - Phase 0 开发前：立项清单 / 选技术栈 / 项目架构 / Agent 宪法（骨架已建）
-- Phase 1 开发中：占位（待补）
+- Phase 1 开发中：实施文档拆解 / 分阶段推进验收（已建骨架）
 - Phase 2 验证：占位（测试、类型、lint、真实输入）
 - Phase 3 交付：占位（文档、部署、审查）
 - Phase 4 复盘：占位（经验沉淀、skill 回写）
@@ -56,3 +56,6 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `04b-context-injection.md`：自动续入上下文 — 自动加载机制、常驻与按需划分
 - `04c-full-load-before-task.md`：任务前全量加载 — 加载清单、禁止只读片段
 - `04d-enforce-read.md`：强制读取验证 — 校验脚本、违规处理
+- `05-phase1-development.md`：Phase 1 开发入口 — 两步流程、与 Phase 0 衔接
+- `05a-implementation-docs.md`：实施文档拆解 — 单元施工图、评审、可追溯
+- `05b-staged-delivery.md`：分阶段推进验收 — 里程碑批次、阶段验收门
