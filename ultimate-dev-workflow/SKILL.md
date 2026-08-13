@@ -18,6 +18,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - 要定项目规则 / AGENTS.md → [04-agent-constitution.md](references/04-agent-constitution.md)
 - 准备写功能 → [05a-implementation-docs.md](references/05a-implementation-docs.md) → [05b-staged-delivery.md](references/05b-staged-delivery.md)
 - 审查 / 找漏洞 / 修复 → [06-phase2-verification.md](references/06-phase2-verification.md) + [09-role-division.md](references/09-role-division.md) + [10-engineering-essentials.md](references/10-engineering-essentials.md)
+- 调 CLI 员工 / 发任务包 / 收报告 → [09a-cli-dispatch.md](references/09a-cli-dispatch.md)
 - 前端设计 / 改版 / UI 审查 → [11-frontend-design.md](references/11-frontend-design.md)
 - Dashboard / 监控面板 → [12-dashboard.md](references/12-dashboard.md)
 - PPT / 文档 / 图片转可编辑 PPT → [13-document-tools.md](references/13-document-tools.md)
@@ -79,6 +80,7 @@ description: 终极全流程开发工作流：覆盖从立项到交付的完整�
 - `07-phase3-delivery.md`：Phase 3 交付 — 文档、部署、回滚、交接、归档
 - `08-phase4-retrospective.md`：Phase 4 复盘 — 成果核对、偏差记录、经验回写
 - `09-role-division.md`：角色分工 — 工程总监宏观推进、CLI 程序员实际执行、审查修复闭环
+- `09a-cli-dispatch.md`：CLI 员工调用标准 — 任务包模板、调用命令、CLI 输出格式、总监收口流程、已实测坑位
 - `10-engineering-essentials.md`：工程红线与反模式 — 质量门、F1–F12 反模式族、老板汇报制（完整 references 见 assets/engineering-references）
 - `11-frontend-design.md`：前端设计与审查 — 模式、三拨盘、反 AI 默认、一致性锁、pre-flight（scripts/references 见 assets/impeccable-*）
 - `12-dashboard.md`：Dashboard 构建 — brief、数据源纪律、指标家族、布局、QA

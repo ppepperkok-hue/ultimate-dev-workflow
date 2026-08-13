@@ -20,6 +20,8 @@
 
 审查修复闭环：只读 CLI 分片审查 → 核实 → 修复任务包 → 只读回归检查 → 总监收口。详见 [09-role-division.md](ultimate-dev-workflow/references/09-role-division.md)。
 
+CLI 的调用标准见 [09a-cli-dispatch.md](ultimate-dev-workflow/references/09a-cli-dispatch.md)：三种 CLI（实现/修复、只读审查、回归检查）的调用命令、任务包模板、回报格式、总监收口流程，以及实测坑位（中文任务包经 stdin 乱码、`codex exec review` 的 `--commit` 与自定义 prompt 互斥、exec 策略拦截复杂 PowerShell 命令等）。
+
 ## 工作流总览
 
 | 阶段 | 内容 | 入口 |
@@ -44,11 +46,17 @@
 ultimate-dev-workflow/
 ├── SKILL.md                    # 入口与全流程总览
 ├── agents/openai.yaml          # UI 元数据
-├── references/                 # 01-15：阶段手册与专项模块
+├── references/                 # 01-15：阶段手册与专项模块；09a：CLI 派发标准
 ├── assets/                     # 内置运行时资产（html-ppt / impeccable / editppt / spreadsheet / 工程手册 / AI 编辑部）
 ├── templates/                  # 任务包、功能模块、AGENTS.md 模板
 └── scripts/                    # verify-constitution.ps1 等校验脚本
 ```
+
+`assets/editppt/SKILL.md.asset` 与 `assets/spreadsheet/SKILL.md.asset` 是原 skill 的说明文件（以 `.asset` 后缀保留，避免被 Codex 重复注册为独立 skill）；对应的 CLI 与脚本照常使用。
+
+## 安装与同步
+
+本机安装位置：`C:\Users\Administrator\.codex\skills\ultimate-dev-workflow`。仓库改动后，把 `ultimate-dev-workflow/` 目录整体复制到该位置即完成同步；新会话生效。
 
 ## 开发与贡献
 
@@ -62,8 +70,9 @@ ultimate-dev-workflow/
 
 ## 项目状态
 
-- 全流程骨架闭环：Phase 0-4 均已落地并有验收门。
-- 待办：用真实项目完成一轮 forward-test，按实战结果迭代。
+- 全流程骨架闭环：Phase 0-4 均已落地并有验收门；已在本机安装生效。
+- 实战补充：09a CLI 派发标准已收录实测经验（调用命令、编码与策略坑位、收口流程）。
+- 持续迭代：用真实项目滚动 forward-test，按实战结果回写本 skill。
 
 ## 许可证
 
