@@ -1,5 +1,12 @@
 # Ultimate Dev Workflow · 终极全流程开发
 
+<!-- moe-counter:start -->
+<p align="center">
+  <a href="https://github.com/journey-ad/Moe-Counter"><img src="https://count.getloli.com/get/@ppepperkok-hue.ultimate-dev-workflow?theme=asoul" alt="README views" width="360" /></a>
+  <br /><sub>README views · Image requests, not unique visitors.</sub>
+</p>
+<!-- moe-counter:end -->
+
 一个把「从立项到交付」的完整开发流程固化成可执行规范的 Codex skill。工程总监和你一起宏观推进项目，CLI 程序员负责实际写码与审查修复——让 AI 写代码不再是开盲盒。
 
 ## 为什么有它
