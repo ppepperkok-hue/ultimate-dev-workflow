@@ -1,0 +1,121 @@
+# Minimal CI for ultimate-dev-workflow.
+#
+# The repository ships a dependency-free PowerShell regression suite for
+# scripts/verify-constitution.ps1 (scripts/tests/run-verify-constitution-tests.ps1).
+# It is run twice because the suite exercises Windows path and UNC behaviour:
+#   * under PowerShell 7 (pwsh), the default on this repository's authoring box;
+#   * under Windows PowerShell 5.1, the host the docs use in their examples.
+# Running it on Linux would be a false green: the Windows path cases cannot hold
+# there and the UNC cases would self-skip.
+#
+# The editppt CLI is syntax-checked only. Its dependencies (PyMuPDF, Pillow,
+# openai, PyYAML, numpy, requests) are not installed here.
+
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    name: verifier tests + editppt syntax (windows-latest)
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # Read-only job: never persist the token in .git/config.
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          # No cache input on purpose: no requirements or lockfile exists.
+
+      - name: verifier regression tests (PowerShell 7)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $output = pwsh -NoProfile -File ultimate-dev-workflow/scripts/tests/run-verify-constitution-tests.ps1 2>&1 | Out-String
+          Write-Host $output
+          $exit = $LASTEXITCODE
+          if ($exit -ne 0) {
+            throw "verifier tests exited with $exit under PowerShell 7"
+          }
+          $summary = [regex]::Match($output, 'Result: (\d+) passed, (\d+) failed\.')
+          if (-not $summary.Success) {
+            throw 'could not read the "Result: N passed, M failed." summary from the test runner'
+          }
+          $passed = [int]$summary.Groups[1].Value
+          $failed = [int]$summary.Groups[2].Value
+          if ($failed -ne 0) {
+            throw "$failed verifier checks failed under PowerShell 7"
+          }
+          # 35 checks run when \\localhost\C$ is reachable. Four UNC assertions
+          # sit inside one guard; when the share is unreachable the runner prints
+          # "SKIP: UNC cases" and reports 31. Derive the expected total from that
+          # line so the legitimate skip path is accepted and nothing else is.
+          $uncSkipped = $output -match '(?m)^SKIP: UNC cases'
+          $expected = if ($uncSkipped) { 31 } else { 35 }
+          if ($uncSkipped) {
+            Write-Host 'note: UNC cases self-skipped (\\localhost\C$ unreachable on this host)'
+          }
+          if ($passed -ne $expected) {
+            throw "expected exactly $expected passing checks, got $passed (35 total; 31 when the four UNC assertions self-skip)"
+          }
+          Write-Host "ok: $passed checks passed under PowerShell 7"
+
+      - name: verifier regression tests (Windows PowerShell 5.1)
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $output = powershell -NoProfile -ExecutionPolicy Bypass -File ultimate-dev-workflow/scripts/tests/run-verify-constitution-tests.ps1 2>&1 | Out-String
+          Write-Host $output
+          $exit = $LASTEXITCODE
+          if ($exit -ne 0) {
+            throw "verifier tests exited with $exit under Windows PowerShell 5.1"
+          }
+          $summary = [regex]::Match($output, 'Result: (\d+) passed, (\d+) failed\.')
+          if (-not $summary.Success) {
+            throw 'could not read the "Result: N passed, M failed." summary from the test runner'
+          }
+          $passed = [int]$summary.Groups[1].Value
+          $failed = [int]$summary.Groups[2].Value
+          if ($failed -ne 0) {
+            throw "$failed verifier checks failed under Windows PowerShell 5.1"
+          }
+          $uncSkipped = $output -match '(?m)^SKIP: UNC cases'
+          $expected = if ($uncSkipped) { 31 } else { 35 }
+          if ($uncSkipped) {
+            Write-Host 'note: UNC cases self-skipped (\\localhost\C$ unreachable on this host)'
+          }
+          if ($passed -ne $expected) {
+            throw "expected exactly $expected passing checks, got $passed (35 total; 31 when the four UNC assertions self-skip)"
+          }
+          Write-Host "ok: $passed checks passed under Windows PowerShell 5.1"
+
+      - name: Python syntax check for the editppt CLI
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $files = @(git ls-files '*.py' | Where-Object { $_ -like 'ultimate-dev-workflow/assets/editppt/*.py' })
+          if ($files.Count -eq 0) {
+            throw 'no tracked editppt .py files found; refusing a vacuous check'
+          }
+          python -m py_compile $files
+          if ($LASTEXITCODE -ne 0) {
+            throw 'py_compile failed'
+          }
+          Write-Host "ok: py_compile passed for $($files.Count) editppt files"
