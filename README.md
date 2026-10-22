@@ -74,6 +74,10 @@ ultimate-dev-workflow/
   ```bash
   python "C:\Users\Administrator\.codex\skills\.system\skill-creator\scripts\quick_validate.py" ultimate-dev-workflow
   ```
+- 宪法校验脚本自测（无第三方依赖，Windows PowerShell 5.1 / PowerShell 7 均可）：
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File ultimate-dev-workflow/scripts/tests/run-verify-constitution-tests.ps1
+  ```
 - 项目经验按 Phase 4 复盘机制回写本 skill 并提交。
 - 本项目由十个开发类 skill 合并而来（engineering-playbook、impeccable、html-ppt、image-to-editable-ppt、spreadsheet-processor、build-dashboard、taste-skill、minimalist-skill、office-docs、novel-editorial-playbook）；原始完整版归档在 `C:\Users\Administrator\skills-archive\dev\merged-2026-08-12`。
 

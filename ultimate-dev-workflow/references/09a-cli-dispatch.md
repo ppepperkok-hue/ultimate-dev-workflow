@@ -8,35 +8,55 @@
 - 压缩后第一步：重读本文件与项目 `docs/reviews/README.md`，确认标准，然后直接调 CLI。
 - 总监不写代码；发现要改的地方，生成任务包派 CLI，不亲自下场。
 
+## 安全默认：不绕过审批与沙箱
+
+- 默认命令用最小权限：实现 / 修复给 `-s workspace-write`（只允许改当前工作区），审查走 review 模式（只读）。
+- 不要为了省事关闭审批或沙箱。确需更大权限时，先说明具体命令与理由，拿到用户明确批准后按最小范围放行；不要把它写进任务包或复制进日常命令。
+- 参数以本机 `codex exec --help` / `codex exec review --help` 为准，CLI 升级后先核对。
+
 ## 三种员工与调用命令（Windows PowerShell，仓库根运行）
 
 ### 1. 实现 / 修复 CLI
 
 ```powershell
 $task = Get-Content -Raw -Encoding UTF8 "C:\temp\task-pack.md"   # 任务包写进 UTF-8 文件
-codex exec --dangerously-bypass-approvals-and-sandbox -o "$env:TEMP\report.md" $task
+codex exec -s workspace-write -o "$env:TEMP\report.md" $task
 ```
 
 要点：
 - 任务包文本**用命令行参数传**（PowerShell 变量），不要用 stdin 管道——实测中文经 stdin 会乱码。
+- `-s workspace-write` 允许改仓库，但不放开全盘与网络；任务包需要联网或写工作区外路径时，先停下回报，由用户决定是否放行。
 - `-o` 指定报告落盘文件，结束后总监读取。
-- `--dangerously-bypass-approvals-and-sandbox` 仅用于已被外部沙箱保护的环境；日常交互环境按各自审批策略执行。
+- 沙箱或审批拦截了必要操作时：记录被拦命令与原因并回报，不要换成全放行模式重跑。
 - CLI 会在仓库留下临时产物（如 `_review_tmp_*`、冒烟数据目录），总监收口时清理；清理用相对路径 `Remove-Item -LiteralPath ...`，**不要带 `-Force`**（exec 策略会拦截部分 `-Force`/`-Recurse` 组合与复杂脚本）。
 
 ### 2. 审查 CLI（只读）
 
 ```powershell
-codex exec review --commit <sha> --dangerously-bypass-approvals-and-sandbox -o "$env:TEMP\review.md"
+codex exec review --commit <sha> -o "$env:TEMP\review.md"
 ```
 
 要点：
-- `codex exec review` 子命令**不支持** `-C`，必须在仓库根运行。
+- `codex exec review` 子命令**不支持** `-C`，也**没有** `-s`；只读由 review 模式保证，不要附加任何沙箱绕过参数。
 - `--commit` 与自定义 prompt **互斥**：指定 `--commit` 时不能附加审查 prompt，靠 commit diff 与项目规则自行审查。
 - 审查 CLI 只读：不修改文件、不提交；临时冒烟数据用 `$env:TEMP`。
 
 ### 3. 回归检查 CLI
 
-同实现 CLI 调用方式，任务包只要求重跑验证命令与相关测试，不改代码。
+同实现 CLI 调用方式（`codex exec -s workspace-write`），任务包只要求重跑验证命令与相关测试，不改代码。
+
+### 跨平台调用（macOS / Linux）
+
+参数与 Windows 相同，只改路径写法与变量引用；任务包同样从 UTF-8 文件读入后作为参数传：
+
+```bash
+task="$(cat /tmp/task-pack.md)"
+codex exec -s workspace-write -o /tmp/report.md "$task"
+
+codex exec review --commit <sha> -o /tmp/review.md
+```
+
+Windows 用 `$env:TEMP`，macOS / Linux 用 `/tmp` 或 `$TMPDIR`。不要把任务包经 stdin 管道传入，中文会乱码。
 
 ## 任务包模板（字段必须齐全）
 
@@ -111,4 +131,5 @@ Ready to merge: Yes | No | With fixes
 - PowerShell 控制台显示中文乱码 → 常是显示编码问题，文件本身是 UTF-8；CLI 内先 `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8` 再读文件。
 - exec 策略拦截复杂 PowerShell 脚本（`Remove-Item -Force/-Recurse` 组合、`Start-Process` + `Stop-Process` 长脚本）→ CLI 冒烟拆成简单逐条命令，临时文件用相对路径、不带 `-Force` 删除；被拦时 CLI 应改用简单方式重试，而不是反复撞策略。
 - CLI 留下的临时目录/文件 → 总监收口时统一清理，避免混入提交。
-- `codex exec review`：`--commit` 与自定义 prompt 互斥、无 `-C`；在仓库根运行。
+- `codex exec review`：`--commit` 与自定义 prompt 互斥、无 `-C`、无 `-s`；在仓库根运行。
+- 权限被拦就换全放行参数 → 不可接受；停下记录具体命令与原因，让用户决定最小放行范围。
